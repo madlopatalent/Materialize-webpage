@@ -1,0 +1,55 @@
+{
+    "user": {
+        "fullName": "Tallent Madlopa",
+        "photo": "./myself.jpg",
+        "backgroud": "./table_mountain.png"
+    },
+    "city": {
+        "name": "Mauritius",
+        "photo": "./city to visit.png",
+        "description": "Mauritius because it is beautiful and it is nestled with Indian ocean. has different cultural diversity which include Africans, Indians and Chinese. contain beautiful and dramatic mountains. they have endemic species i wish to see and luxurious resorts."
+    },
+    "university": {
+        "name": "University of Mpumalanga",
+        "course": "Bachelor of Science",
+        "subject": "Favourite Subjects"
+    },
+    "foreignLanguage": {
+        "language": "French",
+        "description": "French is spoken by so many people worldwide. After English most people understand French so I dont want to be left behind I want to learn it also. Me knowing French can open doors for me in diverse industries and regions. In countries which are developed like Asia, and Europe."
+    },
+
+    "phrases": {
+        "englishPhrase1": "Good morning / hello",
+        "foreignLanguage1": "Bonjour",
+
+        "englishPhrase2": "Nice to meet you",
+        "foreignLanguage2": "ravi de vous rencontrer",
+
+        "englishPhrase3": "English",
+        "foreignLanguage3": "French",
+
+        "englishPhrase4": "my name is Talent",
+        "foreignLanguage4": "mon nom est Talent",
+
+        "englishPhrase5": "I'm Dancing",
+        "foreignLanguage5": "Je dance"
+    },
+    "favouriteSubjects": [
+        {
+            "name": "Water Management",
+            "description": "i love water management, because it helped me enhance my skills in various areas such as leadership,decision-making, problem-solving, and communication, which can be incredibly fulfilling.",
+            "photo": "./WMG.png"
+        },
+        {
+            "name": "ecology",
+            "description": "i love ecology because helped me understand the intricate relationships between organisms and their environments, studying ecology can be incredibly fulfilling. i want to bring solutions in issues such as climate change, biodiversity loss, and habitat destruction.",
+            "photo": "./eco.png"
+        },
+        {
+            "name": "Geography",
+            "description": "i love geography because it is more about diversity of landscapes, climates, cultures, and ecosystems across the globe. it open career opportunities such as urban planning, GIS analysis, environmental consulting international development, and education",
+            "photo": "./GOG.png"
+        }
+    ]
+}

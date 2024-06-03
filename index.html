@@ -1,0 +1,133 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tallent Madlopa</title>
+    <link rel="stylesheet" href="materialize.css">
+</head>
+
+<body>
+    <style>
+        @media (max-width: 960px) {
+            .mid_text {
+                float: right !important;
+                display: flex;
+            }
+        }
+
+        .mid_text.img {
+            float: left !important;
+        }
+
+        p {
+            font-size: 15px;
+            font-display: flex;
+        }
+
+        @media(max-width: 960px) {
+            .city {
+                display: inline-flex;
+            }
+        }
+        .cente{
+            background-color: beige;
+        }
+        .talent{
+            text-align: center ;
+        }
+    </style>
+    <div class="#f50057 pink accent-3">
+        <div class="col s12 m4 l2">
+            <div class="row">
+                <div class="cente">
+                    <h1 class="center col s12 m8 l8">{{user.fullName}}</h1>
+                    <img src="{{user.photo}}" class="circle responsive-img col s12 m4 l4" style="float: right;" width="100" class="talent" >
+                </div>
+            </div>
+        </div>
+        <div class="introduction">
+            <h1>City i want to visit</h1>
+            <h2 class="center">{{city.name}}</h2>
+            <div class="city">
+                <div class="col L4 m6 s12">
+                    <div class="city">
+                        <img class="responsive-img" src="{{city.photo}}" class="col s6">
+                        <p>{{city.description}}</p>
+                    </div>
+                </div>
+            </div>
+</body>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 50%;
+    }
+</style>
+<h1>{{foreignLanguage.language}}</h1>
+<p>{{foreignLanguage.description}}</p>
+<table class="centered">
+
+    <tr>
+        <th>{{phrases.englishPhrase3}}</th>
+        <th>{{phrases.foreignLanguage3}}</th>
+    </tr>
+    <tr>
+        <td>{{phrases.englishPhrase1}}</td>
+        <td>{{phrases.foreignLanguage1}}</td>
+    </tr>
+    <tr>
+        <td>{{phrases.englishPhrase2}}</td>
+        <td>{{phrases.foreignLanguage2}}</td>
+    </tr>
+    <tr>
+        <td>{{phrases.englishPhrase5}}</td>
+        <td>{{phrases.foreignLanguage5}}</td>
+    </tr>
+    <tr>
+        <td>{{phrases.englishPhrase4}}.</td>
+        <td>{{phrases.foreignLanguage4}}</td>
+    </tr>
+</table>
+<div class="#f1f8e9 ligh-green lighten-5"></div>
+<h3>{{university.course}}</h3>
+<p>{{university.name}}</p>
+<h3>{{university.subject}}</h3>
+<div class="row">
+    <div class="col L4 m6 s12">
+        <div class="row">
+            <div>
+                <h3>{{favouriteSubjects.0.name}}</h3>
+                <p>{{favouriteSubjects.0.description}}</p>
+                <img src="{{favouriteSubjects.0.photo}}" alt="{{this.name}}" width="200px">
+            </div>
+        </div>
+    </div>
+    <div class="col L4 m6 s12">
+        <div class="row">
+            <div class="mid_text">
+                <h3>{{favouriteSubjects.1.name}}</h3>
+                <p>{{favouriteSubjects.1.description}}</p>
+                <img src="{{favouriteSubjects.1.photo}}" alt="{{this.name}}" width="200px" class="mid_text.img">
+            </div>
+        </div>
+    </div>
+    <div class="col L4 m6 s12">
+        <div class="row">
+            <div>
+                <h3>{{favouriteSubjects.2.name}}</h3>
+                <p>{{favouriteSubjects.2.description}}</p>
+                <img src="{{favouriteSubjects.2.photo}}" alt="{{this.name}}" width="200px">
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+
+</html>
