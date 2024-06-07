@@ -2,20 +2,23 @@
     "user": {
         "fullName": "Tallent Madlopa",
         "photo": "./myself.jpg",
-        "backgroud": "./table_mountain.png"
+        "backgroud": "./table_mountain.png",
+        "title":  " 'Do it because you want to do it, not because others are doing it.' "
     },
     "city": {
+        "dis": "City i want to visit",
         "name": "Mauritius",
         "photo": "./city to visit.png",
         "description": "Mauritius because it is beautiful and it is nestled with Indian ocean. has different cultural diversity which include Africans, Indians and Chinese. contain beautiful and dramatic mountains. they have endemic species i wish to see and luxurious resorts."
     },
     "university": {
-        "name": "University of Mpumalanga",
+        "name": "I attended at University of Mpumalanga. and i studied",
         "course": "Bachelor of Science",
         "subject": "Favourite Subjects"
     },
     "foreignLanguage": {
-        "language": "French",
+        "language": "Foreign Language",
+        "title": "French",
         "description": "French is spoken by so many people worldwide. After English most people understand French so I dont want to be left behind I want to learn it also. Me knowing French can open doors for me in diverse industries and regions. In countries which are developed like Asia, and Europe."
     },
 
@@ -42,7 +45,7 @@
             "photo": "./WMG.png"
         },
         {
-            "name": "ecology",
+            "name": "<h3>Ecology</h3>",
             "description": "i love ecology because helped me understand the intricate relationships between organisms and their environments, studying ecology can be incredibly fulfilling. i want to bring solutions in issues such as climate change, biodiversity loss, and habitat destruction.",
             "photo": "./eco.png"
         },

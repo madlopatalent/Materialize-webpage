@@ -8,49 +8,74 @@
 </head>
 
 <body>
+    <div class="container">
     <style>
         @media (max-width: 960px) {
             .mid_text {
-                float: right !important;
                 display: flex;
+
             }
         }
-
-        .mid_text.img {
+        /* .mid_text.img {
             float: left !important;
-        }
+        } */
 
-        p {
+        /* p {
             font-size: 15px;
             font-display: flex;
-        }
+        } */
+
 
         @media(max-width: 960px) {
             .city {
                 display: inline-flex;
             }
         }
-        .cente{
+
+        .center {
             background-color: beige;
         }
-        .talent{
-            text-align: center ;
+
+        .col L4 m6 s12 {
+            margin-left: 20px;
+        }
+
+        .talent {
+            text-align: center;
+        }
+        .pic{
+            width: 10px;
+
+        }
+        .table {
+
+            .table,
+            th,
+            td {
+                border: 1px solid;
+            }
+        }
+        .italic{
+            font-style: italic;
         }
     </style>
-    <div class="#f50057 pink accent-3">
-        <div class="col s12 m4 l2">
+    <div>
+    <div class="#f8bbd0 pink lighten-4">
+        <div class="col l4 m4 s12">
             <div class="row">
-                <div class="cente">
-                    <h1 class="center col s12 m8 l8">{{user.fullName}}</h1>
-                    <img src="{{user.photo}}" class="circle responsive-img col s12 m4 l4" style="float: right;" width="100" class="talent" >
+                <div class="center">
+                    <h1 class="center col s12 m8 20">{{user.fullName}}</h1>
+                    <img src="{{user.photo}}" class="pic col l4 m8 s12" style="float: right;"
+                        width="100" class="talent">
+                        <div> <h2 class="italic">{{user.title}}</h2></di>
                 </div>
             </div>
         </div>
         <div class="introduction">
-            <h1>City i want to visit</h1>
-            <h2 class="center">{{city.name}}</h2>
+            <h1 class="center">{{city.dis}}</h1>
+            <h2>{{city.name}}</h2>
             <div class="city">
-                <div class="col L4 m6 s12">
+                <div class="col l4 m4 s12">
                     <div class="city">
                         <img class="responsive-img" src="{{city.photo}}" class="col s6">
                         <p>{{city.description}}</p>
@@ -58,76 +83,76 @@
                 </div>
             </div>
 </body>
-<style>
+<!-- <style>
     table,
     th,
     td {
         border: 1px solid black;
-        border-collapse: collapse;
-        width: 50%;
+        width: 100%;
     }
-</style>
-<h1>{{foreignLanguage.language}}</h1>
+</style> -->
+<h2 class="center">{{foreignLanguage.language}}</h2>
+<h3>{{foreignLanguage.title}}</h3>
 <p>{{foreignLanguage.description}}</p>
-<table class="centered">
+<table class="table">
+        <tr>
+            <th>{{phrases.englishPhrase3}}</th>
+            <th>{{phrases.foreignLanguage3}}</th>
+        </tr>
+        <tr>
+            <td>{{phrases.englishPhrase1}}</td>
+            <td>{{phrases.foreignLanguage1}}</td>
+        </tr>
+        <tr>
+            <td>{{phrases.englishPhrase2}}</td>
+            <td>{{phrases.foreignLanguage2}}</td>
+        </tr>
+        <tr>
+            <td>{{phrases.englishPhrase5}}</td>
+            <td>{{phrases.foreignLanguage5}}</td>
+        </tr>
+        <tr>
+            <td>{{phrases.englishPhrase4}}.</td>
+            <td>{{phrases.foreignLanguage4}}</td>
+        </tr>
 
-    <tr>
-        <th>{{phrases.englishPhrase3}}</th>
-        <th>{{phrases.foreignLanguage3}}</th>
-    </tr>
-    <tr>
-        <td>{{phrases.englishPhrase1}}</td>
-        <td>{{phrases.foreignLanguage1}}</td>
-    </tr>
-    <tr>
-        <td>{{phrases.englishPhrase2}}</td>
-        <td>{{phrases.foreignLanguage2}}</td>
-    </tr>
-    <tr>
-        <td>{{phrases.englishPhrase5}}</td>
-        <td>{{phrases.foreignLanguage5}}</td>
-    </tr>
-    <tr>
-        <td>{{phrases.englishPhrase4}}.</td>
-        <td>{{phrases.foreignLanguage4}}</td>
-    </tr>
 </table>
+
 <div class="#f1f8e9 ligh-green lighten-5"></div>
-<h3>{{university.course}}</h3>
-<p>{{university.name}}</p>
-<h3>{{university.subject}}</h3>
+<h3 class="center">{{university.subject}}</h3>
+<p>{{university.name}} {{university.course}}</p>
 <div class="row">
-    <div class="col L4 m6 s12">
+    <div class="col l4 m4 s12">
         <div class="row">
             <div>
                 <h3>{{favouriteSubjects.0.name}}</h3>
-                <p>{{favouriteSubjects.0.description}}</p>
-                <img src="{{favouriteSubjects.0.photo}}" alt="{{this.name}}" width="200px">
+                <p class="col s6 m6 16">{{favouriteSubjects.0.description}}</p>
+                <img src="{{favouriteSubjects.0.photo}}" alt="{{this.name}}" width="150px">
             </div>
         </div>
     </div>
-    <div class="col L4 m6 s12">
+    <div class="col l4 m4 s12">
         <div class="row">
+            <h3>{{{favouriteSubjects.1.name}}}</h3>
             <div class="mid_text">
-                <h3>{{favouriteSubjects.1.name}}</h3>
-                <p>{{favouriteSubjects.1.description}}</p>
-                <img src="{{favouriteSubjects.1.photo}}" alt="{{this.name}}" width="200px" class="mid_text.img">
+                <p class="col s6 push-s6 m6 16">{{favouriteSubjects.1.description}}</p>
+                <img src="{{favouriteSubjects.1.photo}}" alt="{{this.name}}" width="100px" height="150px" class="col s6 pull-s6 m6 16">
             </div>
         </div>
     </div>
-    <div class="col L4 m6 s12">
+    <div class="col l4 m4 s12">
         <div class="row">
             <div>
                 <h3>{{favouriteSubjects.2.name}}</h3>
-                <p>{{favouriteSubjects.2.description}}</p>
-                <img src="{{favouriteSubjects.2.photo}}" alt="{{this.name}}" width="200px">
+                <p class="col s6 m6 16">{{favouriteSubjects.2.description}}</p>
+                <img src="{{favouriteSubjects.2.photo}}" alt="{{this.name}}" width="150px">
 
             </div>
         </div>
     </div>
 </div>
 </div>
-
+</div>
 </body>
 
 </html>
