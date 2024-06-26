@@ -1,0 +1,180 @@
+codeX
+learn @codeX
+Welcome, tallent
+My progress Refresh Logout
+Deployment
+Add your project to git and deploy to GitHub Pages.
+
+Push your code to a main branch.
+
+Deploying a ViteJS driven project to GitHub pages use GitHub actions - the instructions are below.
+
+Ignore the folders
+The node_modules & dist folder is not to be checked into git
+
+Add then to a .gitignore file in your project folder.
+
+touch .gitignore
+And add this text into it:
+
+node_modules/
+dist/
+The .gitignore is used to exclude folders and files from a GitHub repository. The node_modules/ folder should not be added to the git repo and should be ignored. So we add it to the .gitignore file. The node_modules/ folder will be recreated after an install using npm install.
+
+Add help from the mentors if you already added the dist/ & node_modules/ folder to git.
+
+Setup npm
+For your deployment to work you will need to add these to entries to the script section in your package.json file
+
+ "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+Running the npm run build command will generate versions of the HTML files merged with the json files. It will contain no {{}} tags.
+
+Try it out and check the generated html files.
+
+Deploy using GitHub Actions
+Deploying a ViteJS app to GitHub pages is marginally more tricky than creating a gh-pages branch and pushing it to GitHub. You can find the instructions online here, but you can follow the instructions below.
+
+Once your project is pushed to GitHub there are a few things you need to do.
+
+Set the base of your app in your ViteJS setup.
+
+Add this:
+
+export default {
+    base : '/responsive_webpages/',   // <-- add this
+    plugins: [handlebars({
+        context : {
+            /*
+            previous setup here
+            */
+            data   // add this
+        }
+    })],
+};
+Handle multiple html files
+To deploy your app you need to change your vite.config.js to handle multiple html files over and above index.html.
+
+You need to import the defineConfig from vite :
+
+import { defineConfig } from 'vite'
+And wrap your default export in the defineConfig function:
+
+export default defineConfig({
+    // config attributes goes here
+});
+Next you need to add your previous config inside of the Object Literal inside of defineConfig
+
+You need to these attributes for deployment:
+
+base,
+build (this is new)
+& plugins (you had this before)
+import handlebars from 'vite-plugin-handlebars';
+import { defineConfig } from 'vite';
+import data from './data.json';
+
+export default defineConfig({
+    base : '/responsive_webpages/',
+    build: {
+        rollupOptions: {
+            input : {
+                main: 'index.html',
+            }
+        },
+    },
+    plugins: [handlebars({
+      context : {
+        data
+      }
+  })]
+    
+});
+
+Create deployment file
+Next create a file deployment file.
+
+Once your code is pushed to GitHub follows th instructions below. To create a deploy.yml file.
+
+The instructions:
+
+Click on the Actions tab
+Click on the Settings tab
+Then click on the Pages link on the left
+This will open a GitHub Pages page
+Under Build and deployment under Source select GitHub Actions
+Next to Use a suggested workflow, click on create your own
+as the file name enter deploy.yml
+then copy below into the text box
+click on Commit changes - also on the following popup
+if all goes well your app will be deployed at http://yourGitHubUsername.github.io/responsive_webpages
+After you have done the above be sure to pull the latest changes into your local git repo. Using this command:
+
+git pull origin main
+Code to copy into deploy.yml
+
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ['main']
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload dist repository
+          path: './dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+
+Tools Setup overview
+Tools Setup
+Creating responsive web pages overview
+Creating responsive web pages
+Reponsive web pages with ViteJS & Handlebars
+Overview of what you will learn & do
+Handlebars templates with ViteJS
+Handlebars basics
+Creating a personal web pages using HandlebarsJS
+Deployment
+Unit testing with MochaJS
